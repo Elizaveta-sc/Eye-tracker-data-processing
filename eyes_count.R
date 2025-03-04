@@ -49,7 +49,7 @@ delta <- subset(data, select=c(RECORDING_SESSION_LABEL, INDEX, type))
 delta$diff <- pup$PUPIL_SIZE_MEAN - base$PUPIL_SIZE_MEAN
 
 'create new table with mean delta value for each participant for each stimuli type'
-ms_Delta <- aggregate(diff ~ RECORDING_SESSION_LABEL + type_1,
+ms_Delta <- aggregate(diff ~ RECORDING_SESSION_LABEL + type,
                       data = delta, mean)
 
 'single group table'
